@@ -165,6 +165,16 @@ namespace Exiled.API.Features
         }
 
         /// <summary>
+        /// Gets or sets the generator's powering up time.
+        /// 已经充能的时间.
+        /// </summary>
+        public float PoweringUpTime
+        {
+            get => Base._currentTime;
+            set => Base._currentTime = value;
+        }
+
+        /// <summary>
         /// Gets or sets the cooldown to wait before toggling the generator's panel.
         /// </summary>
         public float TogglePanelCooldown

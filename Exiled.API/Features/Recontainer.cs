@@ -12,6 +12,7 @@ namespace Exiled.API.Features
 
     using Enums;
     using Exiled.API.Features.Doors;
+    using PlayerRoles;
     using PlayerRoles.PlayableScps.Scp079;
     using UnityEngine;
 
@@ -225,5 +226,21 @@ namespace Exiled.API.Features
         /// Breaks the glass protecting the activator button.
         /// </summary>
         public static void BreakGlass() => ActivatorWindow.BreakWindow();
+
+        /// <summary>
+        /// 添加死亡时检查.
+        /// </summary>
+        public static void AddRoleSetFunc()
+        {
+            PlayerRoleManager.OnServerRoleSet += Base.OnServerRoleChanged;
+        }
+
+        /// <summary>
+        /// 移除死亡时检查.
+        /// </summary>
+        public static void RemoveRoleSetFunc()
+        {
+            PlayerRoleManager.OnServerRoleSet -= Base.OnServerRoleChanged;
+        }
     }
 }
