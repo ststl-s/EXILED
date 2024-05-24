@@ -83,6 +83,16 @@ namespace Exiled.API.Features
         }
 
         /// <summary>
+        /// Gets or sets powering up time
+        /// 已充能的时间，实际影响电板更新.
+        /// </summary>
+        public float PoweringTime
+        {
+            get => Base._currentTime;
+            set => Base._currentTime = value;
+        }
+
+        /// <summary>
         /// Gets the generator's dropdown speed.
         /// </summary>
         public float DropdownSpeed => Base.DropdownSpeed;
